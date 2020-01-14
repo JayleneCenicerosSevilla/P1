@@ -1,8 +1,9 @@
 <script type="text/javascript" src="/varios.js"></script>
 
 <?php
-
-//session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+session_start();
 require "conexion.php";
 $con = conecta();
 
@@ -12,7 +13,7 @@ $clave = md5($pass);
 
 $sql = "SELECT *
         FROM administradores
-        WHERE correo='$correo' AND pass='$pass' AND activo=1 AND eliminado=0 ";
+        WHERE correo='$correo' AND pass='$pass' AND status=1 AND eliminado=0 ";
 
 $res = mysql_query($sql, $con);
 
@@ -23,20 +24,16 @@ if ($num == 0) {
            errorLogin();
            location.href = 'login.php';
         </script>";
-  
-        //sleep(5);
+	}
+	else {
+		$nombre    = mysql_result($res, 0, "nombres");
+		$_SESSION["SesionUsuario"] = $nombre;
 
-   //header("Location: login.php");
-} else {
-   $nombre    = mysql_result($res, 0, "nombre");
-
-   $_SESSION["SesionUsuario"] = $nombre;
-
-   echo "<script>
-//           location.href = 'principal.php';
+/* echo "<script>
+			location.href = 'principal.php';
            location.href = 'principal.php?".SID."';
         </script>";
-  // header("Location: Principal/principal.php");
+  // header("Location: Principal/principal.php");*/
 }
       
 ?>
