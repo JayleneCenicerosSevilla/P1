@@ -1,9 +1,9 @@
 <script type="text/javascript" src="/varios.js"></script>
 
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-session_start();
+//error_reporting(E_ALL);
+//ini_set('display_errors', '1');
+session_start(); //inicia sesion
 require "conexion.php";
 $con = conecta();
 
@@ -26,14 +26,14 @@ if ($num == 0) {
         </script>";
 	}
 	else {
-		$nombre    = mysql_result($res, 0, "nombres");
+		$nombre    = mysql_result($res, 0, "nombres"); //cambie nombre de la variable para que coincidiera con la BD
 		$_SESSION["SesionUsuario"] = $nombre;
 
-/* echo "<script>
+echo "<script>
 			location.href = 'principal.php';
-           location.href = 'principal.php?".SID."';
+           location.href = 'principal.php?".SID."'; 
         </script>";
-  // header("Location: Principal/principal.php");*/
+  // header("Location: Principal/principal.php");
 }
       
 ?>
