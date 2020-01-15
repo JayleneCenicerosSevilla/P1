@@ -1,22 +1,18 @@
 <html>
    <head>
-      <title>menu</title>
-
-   <!--   <link rel="stylesheet" href="CSS/estiloMenu.css" /> 
-      <link rel="stylesheet" href="../CSS/estiloMenu.css" /> -->
+      <title>Menu</title>
 
    </head>
 
    <body>
 
    <?php
-      //session_start();
-      //require "../sesion.php";
-      //if (isset($_SESSION["SesionUsuario"])) {
+      session_start(); //sesion
+      if (isset($_SESSION["SesionUsuario"])) {
       //if ( sesionActiva() ) {
          $archivo_actual = basename($_SERVER['PHP_SELF']); //Regresa el nombre del archivo actual
          
-        /* echo "
+         echo "
          <nav class='contenedorMenu'>
             <div class='mensaje'>
                <div class='izquierda'>
@@ -25,10 +21,10 @@
                   
                </div>
                <div class='derecha'>
-              <a href='../logout.php?".SID."'>Salir</a>
+              <a href='logout.php?".SID."'>Salir</a> 
                </div>
             </div>
-            */
+            
             <br> <br>
             <table class=''>
                <tr class=''>
