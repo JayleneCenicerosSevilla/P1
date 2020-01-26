@@ -1,11 +1,14 @@
-<script type="text/javascript" src="/jquery-3.3.1.min.js"></script>
- <script type="text/javascript" src="/elimina_clientes.js"></script>
+<script type="text/javascript" src="JavaScript/jquery-3.3.1.min.js"></script>
+ <script type="text/javascript" src="JavaScript/elimina_clientes.js"></script>
 
 <?php
+session_start();
 
-require "conexion.php";
-require "elimina_clientes.php";
-
+if (isset($_SESSION["SesionUsuario"])) {
+	
+	include "menu.php";
+	require "conexion.php";
+	require "elimina_clientes.php";
 
 
 require "conexion.php"; //conecta con la BD
@@ -66,5 +69,9 @@ echo "<table id=\"tabla1\" border='1px'>";
    }
 
 echo "</table>";
-
+} else {
+	echo "<script>
+			loaction.href = 'login.php'
+			</script>";
+}
 ?>

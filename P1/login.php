@@ -1,7 +1,7 @@
 <html>
    <head>
       <title>Login</title>
-      <!--<link rel='stylesheet' href='CSS/estiloLogin.css' />-->
+      <link rel='stylesheet' href='css/estilologin.css' />
 
       
       <script>
@@ -29,7 +29,7 @@
                <tr><td></td></tr>
                <tr>
                   <td>";
-                     //include 'logosRandom/logos.php';
+                  
          echo "   
                   </td>
                </tr>

@@ -1,5 +1,7 @@
 <?php
-require "conexion.php"; 
+	
+	require "conexion.php"; 
+	
 $con = conecta();
 
 $id = $_GET['id'];
@@ -30,4 +32,5 @@ echo "<table id=\"tabl\" border='1px'>";
       echo "</td>";
    echo "</tr>";
 echo "<a href='listado_clientes.php'><input type=\"button\" value=\"Regresar\" ></a>";
+
 ?>

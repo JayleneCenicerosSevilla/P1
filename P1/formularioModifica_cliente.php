@@ -101,6 +101,7 @@ echo "<form name='forma01' method='post' action='modifica_cliente.php' >
                      
                   </table>
                </form>";
+echo "<a href='listado_clientes.php'><input type=\"button\" value=\"Cancelar\" ></a>";
 
 ?>
 </body>

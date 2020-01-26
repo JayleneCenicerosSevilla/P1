@@ -6,7 +6,7 @@
    
    $id = $_REQUEST['id'];
 
-   $sql = "UPDATE administradores   
+   $sql = "UPDATE administradores  
            SET status=0, eliminado=1 
            WHERE id='$id' ";
 

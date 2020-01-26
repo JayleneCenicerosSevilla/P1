@@ -1,4 +1,4 @@
-<script type="text/javascript" src="/varios.js"></script>
+<script type="text/javascript" src="JavaScript/varios.js"></script>
 
 <?php
 //error_reporting(E_ALL);
@@ -30,10 +30,9 @@ if ($num == 0) {
 		$_SESSION["SesionUsuario"] = $nombre;
 
 echo "<script>
-			location.href = 'principal.php';
-           location.href = 'principal.php?".SID."'; 
-        </script>";
-  // header("Location: Principal/principal.php");
+
+        location.href = 'principal.php?".SID."'; 
+      </script>";
+ 
 }
-      
 ?>

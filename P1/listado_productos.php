@@ -1,17 +1,16 @@
- <script type="text/javascript" src="/jquery-3.3.1.min.js"></script>
- <script type="text/javascript" src="/elimina_produc.js"></script>
+ <script type="text/javascript" src="JavaScript/jquery-3.3.1.min.js"></script>
+ <script type="text/javascript" src="JavaScript/elimina_produc.js"></script>
 
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-require "conexion.php";
-require "elimina_producto.php";
+session_start();
 
-
-
-require "conexion.php"; //conecta con la BD
-			$con = conecta();
-
+if (isset($_SESSION["SesionUsuario"])) {
+	include "menu.php";
+	require "conexion.php";
+	require "elimina_producto.php";
+	
+	require "conexion.php"; //conecta con la BD
+	$con = conecta();
 			///muestra los registros que el status sea 1
 			$sql = "SELECT *
 				FROM productos
@@ -69,9 +68,11 @@ echo "<table id=\"tabla1\" border='1px'>";
    }
 
 echo "</table>";
-
-
-
+} else {
+	echo "<script>
+			location.href = 'login.php';
+			</script>";
+}
 ?>
 
 

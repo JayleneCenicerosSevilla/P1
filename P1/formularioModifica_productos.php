@@ -119,7 +119,7 @@ echo "<form name='forma01' method='post' action='modifica_producto.php' >
                      
                   </table>
                </form>";
-
+echo "<a href='listado_productos.php'><input type=\"button\" value=\"Cancelar\" ></a>";
 ?>
 </body>
 </html>

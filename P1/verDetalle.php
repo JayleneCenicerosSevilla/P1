@@ -1,5 +1,7 @@
 <?php
 require "conexion.php"; 
+//include "menu.php";
+//session_start();
 $con = conecta();
 
 $id = $_GET['id'];
