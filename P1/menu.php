@@ -1,15 +1,14 @@
 <html>
    <head>
       <title>Menu</title>
-
+	  <link rel="stylesheet" href="css/estiloMenu.css" />  
    </head>
 
    <body>
 
    <?php
-      session_start(); //sesion
+     // session_start(); //sesion
       if (isset($_SESSION["SesionUsuario"])) {
-      //if ( sesionActiva() ) {
          $archivo_actual = basename($_SERVER['PHP_SELF']); //Regresa el nombre del archivo actual
          
          echo "
@@ -62,6 +61,18 @@
                      }
                      echo "
                   </td>
+				  
+				  <td class=''>";
+                     
+                     if ($archivo_actual != "listado_clientes.php"){
+                        echo "<a href='listado_clientes.php?".SID."'>
+                                 <input class='btnMenu' type='button' value='Clientes'>
+                              </a>";
+                     } else {
+                        echo "<input class='actual' type='button' value='Clientes'>";
+                     }
+                     echo "
+                  </td>
                   <!--<td class='link'><a href=''></a></td>-->
                </tr>
             </table>
@@ -71,7 +82,7 @@
          echo "<script>
                   location.href = 'login.php';
                </script>";
-      }
+	  }
    ?>
 
    </body>
