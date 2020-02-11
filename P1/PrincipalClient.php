@@ -13,11 +13,11 @@
          session_start();
 
          if (isset($_SESSION["SesionUsuario"])) {
-			 require "conexion.php";
+			 //require "conexion.php";
             include "menuClient.php"; /// muestra el menu 
             
             echo "<span class='Bienvenida'><h1><center>Libros y peliculas</center></h1></span>";
-			include "contenedor.html";
+			include "contenedor.php";
          } else {
             echo "<script>
                      location.href = 'loginClient.php';
